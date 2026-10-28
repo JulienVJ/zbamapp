@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.zbam.mobile",
+      "sha256_cert_fingerprints": ["F1:8A:D0:57:93:42:BA:55:FF:F9:CC:AC:18:D9:84:9E:70:32:19:AA:E3:96:D8:1C:AF:C2:80:9B:05:2A:80:37"]
+    }
+  }
+]
