@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitation ZBAM!</title>
+<meta name="description" content="Un pote te provoque dans son Arène ZBAM! Pronos sur les vrais matchs, cartes secrètes et un gage pour le perdant.">
+<meta property="og:title" content="On te provoque sur ZBAM! 🔥">
+<meta property="og:description" content="Rejoins l'Arène : pronos sur le match, cartes secrètes, et le perdant fait le gage.">
+<meta property="og:image" content="https://zbamapp.com/banner.png">
+<meta name="apple-itunes-app" content="app-id=6819425689">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <img class="logo" src="/icon.png" alt="ZBAM!">
+  <h1>On te provoque&nbsp;!</h1>
+  <p>Un pote t'attend dans son Arène ZBAM! : pronos sur le match, cartes secrètes, et le perdant fait le gage.</p>
+  <div class="card">
+    <span class="muted">Code de l'Arène</span>
+    <div><span class="code" id="code">…</span></div>
+    <a class="btn" id="open" href="#">J'ai l'app : rejoindre</a>
+    <a class="btn alt" id="store" href="https://apps.apple.com/fr/app/zbam/id6819425689">Télécharger ZBAM!</a>
+    <span class="muted" id="hint">Le code est copié quand tu touches « Télécharger » : après l'inscription, ZBAM! te propose de rejoindre l'Arène. Sinon, tape-le dans « Rejoindre avec un code ».</span>
+  </div>
+  <footer><a href="/">zbamapp.com</a> · Zéro argent réel</footer>
+</main>
+<script>
+  // Lien d'invitation : https://zbamapp.com/join?c=<code>. Avec l'app installée, iOS l'ouvre directement
+  // (apple-app-site-association) ; sinon cette page donne le code et le bon store.
+  var code = (new URLSearchParams(location.search).get('c') || '').replace(/[^a-z0-9]/gi, '').toLowerCase().slice(0, 16);
+  var codeEl = document.getElementById('code');
+  codeEl.textContent = code ? code.toUpperCase() : '—';
+  document.getElementById('open').href = 'zbam://join/' + code;
+  var android = /android/i.test(navigator.userAgent);
+  var store = document.getElementById('store');
+  if (android) {
+    // Android pas encore sur Google Play : on le dit franchement plutôt qu'un lien mort.
+    store.textContent = 'Android : bientôt';
+    store.className = 'btn off';
+    store.removeAttribute('href');
+  }
+  store.addEventListener('click', function () {
+    // Le presse-papiers permet à l'app de retrouver l'Arène après l'installation.
+    if (code && navigator.clipboard) navigator.clipboard.writeText('ZBAM-' + code.toUpperCase()).catch(function () {});
+  });
+</script>
+</body>
+</html>

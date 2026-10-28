@@ -1,0 +1,23 @@
+:root { --night: #161B3A; --paper: #FFF8E7; --ink: #0A0A0A; --yellow: #FFD23F; --red: #D7192F; }
+* { box-sizing: border-box; }
+html { background: var(--night); }
+body {
+  margin: 0; min-height: 100vh; color: var(--paper);
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at 50% 0, #232a5c 0, var(--night) 60%);
+  background-color: var(--night);
+}
+main { max-width: 560px; margin: 0 auto; padding: 32px 16px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+.logo { width: 112px; height: 112px; border-radius: 26px; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+h1 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: 1px; color: var(--yellow); font-size: 46px; line-height: 1.05; margin: 0; text-shadow: 3px 3px 0 var(--red), 5px 5px 0 var(--ink); }
+p { margin: 0; color: #e8e3d4; }
+.card { width: 100%; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 18px; box-shadow: 6px 6px 0 var(--ink); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.code { font-family: "Bangers", Impact, sans-serif; font-size: 44px; letter-spacing: 6px; color: var(--ink); background: var(--yellow); border: 3px solid var(--ink); border-radius: 12px; padding: 4px 12px; }
+.btn { display: block; width: 100%; padding: 14px 18px; border-radius: 14px; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); font-family: "Bangers", Impact, sans-serif; font-size: 24px; letter-spacing: 1px; text-decoration: none; color: var(--paper); background: var(--red); cursor: pointer; }
+.btn.alt { background: var(--yellow); color: var(--ink); }
+.btn.off { background: #c9c3b3; color: #555; box-shadow: none; cursor: default; }
+.btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.muted { font-size: 14px; color: #555; }
+footer { font-size: 14px; color: #a9a6c9; }
+footer a { color: var(--yellow); }
+.banner { width: 100%; border-radius: 16px; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["82K82JXG96.app.zbam.mobile"],
+        "components": [
+          { "/": "/join", "?": { "c": "?*" }, "comment": "Invitation dans une Arène : /join?c=<code>" },
+          { "/": "/join/", "?": { "c": "?*" }, "comment": "Même lien, avec la barre finale ajoutée par GitHub Pages" }
+        ]
+      }
+    ]
+  }
+}
