@@ -28,6 +28,7 @@
   </div>
   <footer><a href="/">zbamapp.com</a> · Zéro argent réel</footer>
 </main>
+<script src="/count.js"></script>
 <script>
   // Lien d'invitation : https://zbamapp.com/join?c=<code>. Avec l'app installée, iOS l'ouvre directement
   // (apple-app-site-association) ; sinon cette page donne le code et le bon store.
@@ -37,11 +38,16 @@
   document.getElementById('open').href = 'zbam://join/' + code;
   var android = /android/i.test(navigator.userAgent);
   var store = document.getElementById('store');
-  if (android) {
+  store.setAttribute('data-store', 'ios');
+  if (android && window.ZBAM_ANDROID_LIVE) {
+    store.href = window.ZBAM_PLAY_URL;
+    store.setAttribute('data-store', 'android');
+  } else if (android) {
     // Android pas encore sur Google Play : on le dit franchement plutôt qu'un lien mort.
     store.textContent = 'Android : bientôt';
     store.className = 'btn off';
     store.removeAttribute('href');
+    store.removeAttribute('data-store');
   }
   store.addEventListener('click', function () {
     // Le presse-papiers permet à l'app de retrouver l'Arène après l'installation.

@@ -21,8 +21,8 @@
   <p>Pronos entre potes sur les vrais matchs, cartes secrètes pour tout renverser, et un gage pour le perdant. Zéro argent réel.</p>
   <img class="banner" src="/banner.png" alt="">
   <div class="card">
-    <a class="btn" href="https://apps.apple.com/fr/app/zbam/id6819425689">Télécharger sur iPhone</a>
-    <span class="btn off">Android : bientôt</span>
+    <a class="btn" data-store="ios" href="https://apps.apple.com/fr/app/zbam/id6819425689">Télécharger sur iPhone</a>
+    <a class="btn off" id="android">Android : bientôt</a>
   </div>
   <footer>
     <a href="https://julienvj.github.io/zbam-legal/support.html">Aide</a> ·
@@ -31,5 +31,15 @@
     <a href="mailto:zbamcontact@gmail.com">Contact</a>
   </footer>
 </main>
+<script src="/count.js"></script>
+<script>
+  if (window.ZBAM_ANDROID_LIVE) {
+    var a = document.getElementById('android');
+    a.textContent = 'Télécharger sur Android';
+    a.className = 'btn alt';
+    a.href = window.ZBAM_PLAY_URL;
+    a.setAttribute('data-store', 'android');
+  }
+</script>
 </body>
 </html>
