@@ -3,7 +3,7 @@
 // (?s=tiktok, ?s=insta…, gardée pour la durée de l'onglet) et le type d'appareil.
 // Les liens vers les stores portent data-store="ios" ou data-store="android".
 // Google Play : passer à true quand l'app Android est publiée (les boutons Android deviennent actifs).
-window.ZBAM_ANDROID_LIVE = false;
+window.ZBAM_ANDROID_LIVE = true;
 window.ZBAM_PLAY_URL = 'https://play.google.com/store/apps/details?id=app.zbam.mobile';
 
 (function () {
